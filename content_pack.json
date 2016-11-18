@@ -1,0 +1,15 @@
+{
+  "name":"Rundeck Execution LOG GROK pattern for Graylog",
+  "description":"Graylog Grok pattern for Rundeck (>=2.6.x) execution logs",
+  "category":"Grok",
+  "inputs":[],
+  "streams":[],
+  "outputs":[],
+  "dashboards":[],
+  "grok_patterns":[
+    {
+      "name":"RUNDECKEXECUTIONLOG",
+      "pattern":"\\[%{TIMESTAMP_ISO8601:rundeck_ex_timestamp}\\] %{USERNAME:rundeck_ex_user} %{WORD:rundeck_ex_action} \\[%{NUMBER:rundeck_ex_id:int}:%{WORD:rundeck_ex_return}\\] %{DATA:rundeck_ex_project} %{GREEDYDATA} \\\"%{DATA:rundeck_ex_job}\\\""
+    }
+  ]
+}
