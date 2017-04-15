@@ -1,5 +1,5 @@
 {
-  "name":"Rundeck Execution Log GROK pattern for Graylog",
+  "name":"Rundeck Execution Log GROK pattern for Graylog (@zionio 2016)",
   "description":"Graylog Grok pattern for Rundeck (>=2.6.x) execution logs",
   "category":"Grok",
   "inputs":[],
