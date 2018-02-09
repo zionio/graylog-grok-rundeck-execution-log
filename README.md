@@ -8,7 +8,7 @@ Pattern
 -------
 
 	"name":"RUNDECKEXECUTIONLOG",
-	"pattern":"\\[%{TIMESTAMP_ISO8601:rundeck_ex_timestamp}\\] %{USERNAME:rundeck_ex_user} %{WORD:rundeck_ex_action} \\[%{NUMBER:rundeck_ex_id:int}:%{WORD:rundeck_ex_return}\\] %{DATA:rundeck_ex_project} %{GREEDYDATA} \\\"%{DATA:rundeck_ex_job}\\\""
+	"pattern":"\\[%{TIMESTAMP_ISO8601:rundeck_ex_timestamp}\\] %{USERNAME:rundeck_ex_user} %{WORD:rundeck_ex_action} \\[%{NUMBER:rundeck_ex_id:int}:%{WORD:rundeck_ex_return}\\] %{DATA:rundeck_ex_project} %{GREEDYDATA} \\\"%{DATA:rundeck_ex_jobname}\\\"(?:%{SPACE})\\[%{DATA:rundeck_ex_jobid}\\]"
 
 Example message
 ---------------
@@ -21,10 +21,12 @@ Fields
 	rundeck_ex_timestamp: 2016-11-18 16:05:28,387
 	rundeck_ex_action: start
 	rundeck_ex_id: 51
-	rundeck_ex_job: Group/JobName
+	rundeck_ex_jobname: Group/JobName
 	rundeck_ex_project: ProjectName
 	rundeck_ex_return: running
 	rundeck_ex_user: User1
+	rundeck_ex_jobid: 56e4c0e7-da90-4267-9f19-3ff3135eb680
+	
 
 Installation
 ------------

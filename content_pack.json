@@ -9,7 +9,7 @@
   "grok_patterns":[
     {
       "name":"RUNDECKEXECUTIONLOG",
-      "pattern":"\\[%{TIMESTAMP_ISO8601:rundeck_ex_timestamp}\\] %{USERNAME:rundeck_ex_user} %{WORD:rundeck_ex_action} \\[%{NUMBER:rundeck_ex_id:int}:%{WORD:rundeck_ex_return}\\] %{DATA:rundeck_ex_project} %{GREEDYDATA} \\\"%{DATA:rundeck_ex_job}\\\""
+      "pattern":"\\[%{TIMESTAMP_ISO8601:rundeck_ex_timestamp}\\] %{USERNAME:rundeck_ex_user} %{WORD:rundeck_ex_action} \\[%{NUMBER:rundeck_ex_id:int}:%{WORD:rundeck_ex_return}\\] %{DATA:rundeck_ex_project} %{GREEDYDATA} \\\"%{DATA:rundeck_ex_jobname}\\\"(?:%{SPACE})\\[%{DATA:rundeck_ex_jobid}\\]"
     }
   ]
 }
